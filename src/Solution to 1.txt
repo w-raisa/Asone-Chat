@@ -1,0 +1,16 @@
+Solution to 1. Get IP address.
+
+Master Server side
+1. get IP address of the computer the Master Server is running on.
+2. Hardcode the client to connect to that IP address in the MasterExecute() function in ChatClient.
+
+Client Side
+1. Get IP address as soon as user (Waf) logs in.
+2. Put the IP Address of the user Waf in the database OR make it an attribute of Waf (ChatClient) and use getters and setters to access IP address.
+3. When Waf clicks on Hansel to talk to, send to the Master Server Thread not only Hansel's name, but Waf's IP address OR, in Master Server Thread, you have a list of all connected clients, get waf, and then get IP address using getters/setters, instead of having to write the whole ass IP address to the Master Server Thread. There may be issues with this later on, when we try to send messages to people offline.
+4. In the Master Server Thread, the ChatServer is created in there. Create the ChatServer with Waf's IP address.
+5. Once ChatServer is running, Hansel will then connect to it, we need Hansel to know Waf's IP address, so we need to write Waf's IP Address to Hansel (the place where you write request, in SetUpClientSide, yeah just replace "request" with Waf's IP Address).
+6. Hansel will then call execute() in ChatSetUp (pass in the IP address into execute()). In execute(), when Hansel sets up the socket, make the IP address you're passing into the socket, Waf's Ip Address.
+7. Hansel will then connect to the ChatServer. 
+8. Waf will also connect to the ChatServer, as in the area where you do ChatSetUp, you receive a null message anyway.
+9. They will both be connected to the same ChatServer, and they should now be able to talk.

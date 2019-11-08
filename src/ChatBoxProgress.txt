@@ -1,0 +1,24 @@
+-----------------------------------------------------------------------------
+As of Wednesday, July 3rd, 2019:
+
+1. Set up IP Addresses
+	✧ Need to scan for available ports too. Maybe use Netcat to do that? ✧
+2. Make sure Hansel's window is opened on his side and not on Waf's side.
+3. Set up Database
+4. Set up the rest of program with the Database accordingly
+5. Generate enough buttons for the number of friends a user would have.
+6. Allow Waf to talk to multiple people, and multiple people to talk to Waf.
+
+This is the whole backend, for now. 
+-----------------------------------------------------------------------------
+Wednesday, July 3rd, 2019
+
+I can now finally open two windows and two windows only, one being on waf's side the other being on Hansel's side. But I can't confirm if Hansel's window is really being opened on Hansel's side. I can't confirm.
+
+The next step is to set it up the IP Addresses. Once we do that, we can probably test it out and see if the windows are being opened on the correct sides.
+
+Part of me says that the Chat Box is not opening on Hansel's side, because there is only one server running, and the reason why two boxes get opened is because two clients connect, but remember, the ChatServer was created on Waf's side... Idk I Can't tell for sure... need to get IP addresses running first.
+
+-----------------------------------------------------------------------------
+
+
